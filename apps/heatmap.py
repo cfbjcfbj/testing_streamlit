@@ -1,6 +1,5 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-from h3 import h3
 import folium
 
 

@@ -1,7 +1,8 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import folium
-
+import pydeck as pdk
+import pandas as pd
 
 def app():
 
@@ -23,3 +24,34 @@ def app():
     m = leafmap.Map(center=(1.3521, 103.8198), zoom=12)
     m.add_basemap("ROADMAP")
     m.to_streamlit(height=700)
+
+    chart_data = pd.DataFrame({'lat': [1.29684825487647], 'lon': [103.85253591654006]})
+
+    st.pydeck_chart(pdk.Deck(
+        map_style=None,
+        initial_view_state=pdk.ViewState(
+            latitude=1.3521,
+            longitude=103.8198,
+            zoom=11,
+            pitch=50,
+        ),
+        layers=[
+            pdk.Layer(
+            'HexagonLayer',
+            data=chart_data,
+            get_position='[lon, lat]',
+            radius=200,
+            elevation_scale=0,
+            elevation_range=[0, 1000],
+            pickable=True,
+            extruded=True,
+            ),
+            pdk.Layer(
+                'ScatterplotLayer',
+                data=chart_data,
+                get_position='[lon, lat]',
+                get_color='[200, 30, 0, 160]',
+                get_radius=200,
+            ),
+        ],
+    ))

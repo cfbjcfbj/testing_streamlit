@@ -20,4 +20,7 @@ def app():
     # )
     # m.to_streamlit(height=700)
 
-    map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
+    m = leafmap.Map(locate_control=True)
+    m = leafmap.Map(center=(1.3521, 103.8198), zoom=12)
+    m.add_basemap("ROADMAP")
+    m.to_streamlit(height=700)

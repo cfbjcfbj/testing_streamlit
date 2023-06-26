@@ -48,7 +48,7 @@ def app():
             latitude=1.3521,
             longitude=103.8198,
             zoom=11,
-            pitch=30, #camera angle
+            pitch=0, #camera angle
         ),
         layers=[
             pdk.Layer(

@@ -2,7 +2,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import osmnx as ox
 import folium
-from streamlit_folium import st_folium, folium_static
+from streamlit_folium import st_folium
 
 
 def app():

@@ -1,6 +1,6 @@
 import streamlit as st
 import folium
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 import h3
 import branca.colormap as cm #testing
 
@@ -13,7 +13,7 @@ def app():
         """
     )
 
-    map = folium.Map(location=[1.3521, 103.8198], zoom_start=10, tiles="CartoDB Positron")
+    map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120) #testing
 
@@ -40,7 +40,7 @@ def app():
         popup=f'Time: {time:.2f} min' #testing
         ).add_to(map)
 
-    folium_static(map)
+    st_folium(map, width=1400, height=700)
 
 if __name__ == "__main__":
     app()

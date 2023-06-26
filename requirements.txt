@@ -11,4 +11,3 @@ streamlit-option-menu
 h3
 osmnx
 streamlit_folium
-branca.colormap

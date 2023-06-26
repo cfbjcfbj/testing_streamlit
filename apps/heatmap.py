@@ -55,7 +55,7 @@ def app():
             'HexagonLayer',
             data=chart_data,
             get_position='[lon, lat]',
-            radius=50,
+            radius=100,
             elevation_scale=0,
             elevation_range=[0, 1000],
             pickable=True,

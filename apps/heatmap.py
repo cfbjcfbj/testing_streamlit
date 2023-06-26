@@ -25,7 +25,12 @@ def app():
     # m.add_basemap("ROADMAP")
     # m.to_streamlit(height=700)
 
-    chart_data = pd.DataFrame({'lat': [1.29684825487647], 'lon': [103.85253591654006]})
+    data = {
+    'lat': [1.29684825487647, 1.297, 1.298],
+    'lon': [103.85253591654006, 103.853, 103.854],
+    'time': [12.1, 13.2, 14.3]}
+
+    chart_data = pd.DataFrame(data)
 
     st.pydeck_chart(pdk.Deck(
         map_style=None,
@@ -33,18 +38,24 @@ def app():
             latitude=1.3521,
             longitude=103.8198,
             zoom=11,
-            pitch=50,
+            pitch=30, #camera angle
         ),
         layers=[
             pdk.Layer(
             'HexagonLayer',
             data=chart_data,
             get_position='[lon, lat]',
-            radius=200,
+            radius=50,
             elevation_scale=0,
             elevation_range=[0, 1000],
             pickable=True,
             extruded=True,
+            color_range=[
+            [0, 0, 255, 100],
+            [255, 0, 0, 100]
+            ],
+            color_domain=[0, 1000],
+            tooltip={'text': '@time'}
             ),
         ],
     ))

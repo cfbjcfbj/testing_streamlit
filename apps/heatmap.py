@@ -55,7 +55,7 @@ def app():
             [255, 0, 0, 100]
             ],
             color_domain=[0, 1000],
-            tooltip={'text': '@time'}
+            tooltip={'text': '@time{%f}'}
             ),
         ],
     ))

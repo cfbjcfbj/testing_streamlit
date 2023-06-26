@@ -10,6 +10,10 @@ def app():
 
     st.title("Heatmap")
 
+    PLACE_NAME = 'Singapore'
+    G = ox.graph_from_place(PLACE_NAME, network_type='drive')
+    ox.plot_graph_folium(G)
+
     # filepath = "https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/us_cities.csv"
     # m = leafmap.Map(tiles="stamentoner")
     # m.add_heatmap(

@@ -33,8 +33,9 @@ def app():
             fill_opacity=0.6,
         ).add_to(map)
 
-    st.pydeck_chart(map)
-
+    folium_static = st_folium.StaticMap(map)
+    folium_static.add_folium(map)
+    folium_static.render()
 
 if __name__ == "__main__":
     app()

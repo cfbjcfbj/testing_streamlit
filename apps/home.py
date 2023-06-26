@@ -1,5 +1,7 @@
 import streamlit as st
-import leafmap
+import leafmap.foliumap as leafmap
+
+# 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
 
 def app():
     st.title("Connect AI")

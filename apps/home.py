@@ -1,8 +1,5 @@
 import streamlit as st
-import folium
-import geopandas as gpd
 import leafmap.foliumap as leafmap
-import osmnx as ox
 
 def app():
     st.title("Connect AI")

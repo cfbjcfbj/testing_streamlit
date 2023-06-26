@@ -1,7 +1,6 @@
 import streamlit as st
-import pandas as pd
 import folium
-from streamlit_folium import st_folium
+from streamlit_folium import folium_static
 import h3
 
 def app():
@@ -33,9 +32,7 @@ def app():
             fill_opacity=0.6,
         ).add_to(map)
 
-    folium_static = st_folium.StaticMap(map)
-    folium_static.add_folium(map)
-    folium_static.render()
+    folium_static(map)
 
 if __name__ == "__main__":
     app()

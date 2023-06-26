@@ -20,10 +20,10 @@ def app():
     # )
     # m.to_streamlit(height=700)
 
-    m = leafmap.Map(locate_control=True)
-    m = leafmap.Map(center=(1.3521, 103.8198), zoom=12)
-    m.add_basemap("ROADMAP")
-    m.to_streamlit(height=700)
+    # m = leafmap.Map(locate_control=True)
+    # m = leafmap.Map(center=(1.3521, 103.8198), zoom=12)
+    # m.add_basemap("ROADMAP")
+    # m.to_streamlit(height=700)
 
     chart_data = pd.DataFrame({'lat': [1.29684825487647], 'lon': [103.85253591654006]})
 

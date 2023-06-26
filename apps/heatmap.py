@@ -1,5 +1,5 @@
 import streamlit as st
-import leafmap.foliumap as leafmap
+# import leafmap.foliumap as leafmap
 import folium
 import pydeck as pdk
 import pandas as pd

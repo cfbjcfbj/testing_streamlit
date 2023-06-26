@@ -49,30 +49,28 @@ def app():
  '8a6526362547fff': 29.2,
  '8a652636250ffff': 30.099999999999998}
 
-    color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
+    # color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 
     # Now plot the hexagons
     for h3_index, time in hexagons.items():
     # Convert H3 index to geo boundary (latitude and longitude)
         geo_boundary = h3.h3_to_geo_boundary(h3_index, geo_json=False)
 
-
-
     # Compute color based on the time
-        color = color_scale(time)
+        # color = color_scale(time)
 
     # Add polygon to the map
         folium.Polygon(
             locations=geo_boundary,
-            color=None,
+            # color=None,
             fill=True,
-            fill_color=color,
+            # fill_color=color,
             fill_opacity=0.6,
         #popup=f'Time: {time:.2f} min'
         ).add_to(map)
 
 # Add color scale to the map
-    map.add_child(color_scale)
+    # map.add_child(color_scale)
 
 # Display the map
     map

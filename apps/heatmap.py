@@ -8,6 +8,7 @@ def app():
 
     filepath = "https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/us_cities.csv"
     m = leafmap.Map(tiles="stamentoner")
+    m.set_bounds([1.15, 103.55], [1.48, 104.10])
     m.add_heatmap(
         filepath,
         latitude="latitude",

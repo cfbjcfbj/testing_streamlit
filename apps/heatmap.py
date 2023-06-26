@@ -3,6 +3,7 @@ import leafmap.foliumap as leafmap
 import folium
 import pydeck as pdk
 import pandas as pd
+import h3
 
 def app():
 

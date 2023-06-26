@@ -13,7 +13,7 @@ def app():
         """
     )
 
-    map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
+    map = folium.Map(location=[1.3521, 103.8198], zoom_start=10, tiles="CartoDB Positron")
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120) #testing
 

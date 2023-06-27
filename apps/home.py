@@ -58,12 +58,11 @@ def app():
     st_folium(map, width=1400, height=700)
 
         # Display the clicked coordinates
-    if clicked_lat is not None and clicked_lon is not None:
-        st.write("Clicked Coordinates:")
-        st.write(f"Latitude: {clicked_lat}")
-        st.write(f"Longitude: {clicked_lon}")
 
-# click event testing
+    st.write(f"Latitude: {clicked_lat}")
+    st.write(f"Longitude: {clicked_lon}")
+
+
 
 if __name__ == "__main__":
     app()

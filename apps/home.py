@@ -4,6 +4,17 @@ from streamlit_folium import st_folium
 import h3
 import branca.colormap as cm
 
+
+# Global variables to store latitude and longitude
+clicked_lat = None
+clicked_lon = None
+
+@st.cache(allow_output_mutation=True)
+def handle_click(event):
+    global clicked_lat, clicked_lon
+    clicked_lat, clicked_lon = event.lat, event.lon
+    st.info(f"Clicked coordinates: Latitude={clicked_lat}, Longitude={clicked_lon}")
+
 def app():
     st.title("Connect AI")
 
@@ -15,7 +26,7 @@ def app():
 
     map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
 
-    folium.LatLngPopup().add_to(map) # testing
+    folium.LatLngPopup().add_to(map)
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 
@@ -44,23 +55,13 @@ def app():
 
     st_folium(map, width=1400, height=700)
 
-# click event testing
-
-# Global variables to store latitude and longitude
-clicked_lat = None
-clicked_lon = None
-
-@st.cache(allow_output_mutation=True)
-def handle_click(event):
-    global clicked_lat, clicked_lon
-    clicked_lat, clicked_lon = event.lat, event.lon
-    st.info(f"Clicked coordinates: Latitude={clicked_lat}, Longitude={clicked_lon}")
-
-    # Display the clicked coordinates
+        # Display the clicked coordinates
     if clicked_lat is not None and clicked_lon is not None:
         st.write("Clicked Coordinates:")
         st.write(f"Latitude: {clicked_lat}")
         st.write(f"Longitude: {clicked_lon}")
+
+# click event testing
 
 if __name__ == "__main__":
     app()

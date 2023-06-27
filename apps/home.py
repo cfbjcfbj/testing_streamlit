@@ -15,7 +15,7 @@ def app():
 
     map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
 
-    folium.LatLngPopup().add_to(map)
+    folium.LatLngPopup().add_to(map) # testing
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 
@@ -43,6 +43,18 @@ def app():
         ).add_to(map)
 
     st_folium(map, width=1400, height=700)
+
+# click event testing
+
+# Global variables to store latitude and longitude
+clicked_lat = None
+clicked_lon = None
+
+@st.cache(allow_output_mutation=True)
+def handle_click(event):
+    global clicked_lat, clicked_lon
+    clicked_lat, clicked_lon = event.lat, event.lon
+    st.info(f"Clicked coordinates: Latitude={clicked_lat}, Longitude={clicked_lon}")
 
 if __name__ == "__main__":
     app()

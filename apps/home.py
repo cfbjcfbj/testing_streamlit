@@ -21,7 +21,7 @@ st.write("You are here at~", user_input)
 
 
 
-@st.cache(allow_output_mutation=True)
+# @st.cache(allow_output_mutation=True)
 def app(user_input):
 
     # Call API

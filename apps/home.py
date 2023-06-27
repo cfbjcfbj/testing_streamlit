@@ -5,21 +5,24 @@ import h3
 import branca.colormap as cm
 import requests
 
-@st.cache(allow_output_mutation=True)
-def app():
-    st.title("Connect AI")
+st.title("Connect AI")
 
-    st.markdown(
+st.markdown(
         """
         Welcome to Connect AI! Where we connect you with your dates
         """
-    )
+)
 
-    # Create a text input box
-    user_input = st.text_input("Where are you now?", "")
+# Create a text input box
+user_input = st.text_input("Where are you now?", "")
 
-    # Display the input text
-    st.write("You are here at~", user_input)
+# Display the input text
+st.write("You are here at~", user_input)
+
+
+
+@st.cache(allow_output_mutation=True)
+def app():
 
     # Call API
 

@@ -56,5 +56,11 @@ def handle_click(event):
     clicked_lat, clicked_lon = event.lat, event.lon
     st.info(f"Clicked coordinates: Latitude={clicked_lat}, Longitude={clicked_lon}")
 
+    # Display the clicked coordinates
+    if clicked_lat is not None and clicked_lon is not None:
+        st.write("Clicked Coordinates:")
+        st.write(f"Latitude: {clicked_lat}")
+        st.write(f"Longitude: {clicked_lon}")
+
 if __name__ == "__main__":
     app()

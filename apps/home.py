@@ -10,9 +10,9 @@ clicked_lat = None
 clicked_lon = None
 
 @st.cache(allow_output_mutation=True)
-def handle_click(event):
+def handle_click(event,  **kwargs):
     global clicked_lat, clicked_lon
-    clicked_lat, clicked_lon = event.lat, event.lon
+    clicked_lat, clicked_lon = event.lat, event.lng
     st.info(f"Clicked coordinates: Latitude={clicked_lat}, Longitude={clicked_lon}")
 
 def app():
@@ -28,7 +28,7 @@ def app():
 
     # Add click event handler
     map.add_child(folium.LatLngPopup())
-    # map.add_child(folium.ClickForMarker(popup=None, callback=handle_click))
+    map.add_child(folium.ClickForMarker(popup=None, callback=handle_click))
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 

@@ -28,7 +28,7 @@ def app():
 
     # Add click event handler
     map.add_child(folium.LatLngPopup())
-    map.add_child(folium.ClickForMarker(popup=None, callback=handle_click))
+    # map.add_child(folium.ClickForMarker(popup=None, callback=handle_click))
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 

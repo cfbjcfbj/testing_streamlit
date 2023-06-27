@@ -6,7 +6,7 @@ import branca.colormap as cm
 import requests
 
 
-@st.cache_data(experimental_allow_widgets=True,persist=None)
+@st.cache_data(experimental_allow_widgets=True)
 def app():
 
     st.title("Connect AI")

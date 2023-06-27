@@ -24,12 +24,12 @@ def app():
     st.write("You are here at~", user_input)
 
     # Check if user input has changed
-    if st.session_state.previous_input != user_input:
-        st.session_state.previous_input = user_input
+    if user_input != new_input:
+        new_input = user_input
 
         # Call API
 
-        response = requests.get(f"https://connectai-emwgdoqmma-de.a.run.app/traveltimeh3?locations={user_input}")
+        response = requests.get(f"https://connectai-emwgdoqmma-de.a.run.app/traveltimeh3?locations={new_input}")
         if response.status_code == 200:
             hex_data = response.json()
         else:

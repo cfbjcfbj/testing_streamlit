@@ -14,6 +14,12 @@ def app():
         """
     )
 
+    # Create a text input box
+    user_input = st.text_input("Where are you now?", "")
+
+    # Display the input text
+    st.write("You are here at~", user_input)
+
     map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
 
     # Add click event handler

@@ -20,6 +20,7 @@ def app():
     st.title("Connect AI")
     st.markdown("Welcome to Connect AI! Where we connect you with your dates")
 
+    @st.cache(suppress_st_warning=True)
     # Create a text input box
     user_input = st.text_input("Where are you now?", "")
 

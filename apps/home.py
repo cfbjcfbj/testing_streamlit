@@ -3,7 +3,6 @@ import folium
 from streamlit_folium import st_folium
 import h3
 import branca.colormap as cm
-import clipboard
 
 
 def app():
@@ -20,7 +19,7 @@ def app():
     # Add click event handler
     map.add_child(folium.LatLngPopup())
     map.add_child(folium.ClickForMarker())
-    latlon = clipboard.paste()
+
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 
@@ -48,7 +47,6 @@ def app():
         ).add_to(map)
 
     st_folium(map, width=1400, height=700)
-    print(latlon)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import streamlit as st
 import folium
 import folium.plugins as plugins
 import requests
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 import h3.api.basic_str as h3
 import branca.colormap as cm
 
@@ -58,7 +58,7 @@ def app():
             popup=f'Time: {time:.2f} min'
         ).add_to(map)
 
-    folium_static(map)
+    st_folium(map, width=1500, height=700)
 
 
 if __name__ == "__main__":

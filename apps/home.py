@@ -15,7 +15,7 @@ def load_data(user_input):
         st.write("Error:", response.status_code)
         return None
 
-@st.cache(suppress_st_warning=True)
+# @st.cache(suppress_st_warning=True)
 def app():
     st.title("Connect AI")
     st.markdown("Welcome to Connect AI! Where we connect you with your dates")

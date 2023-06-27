@@ -4,11 +4,9 @@ from streamlit_folium import st_folium
 import h3
 import branca.colormap as cm
 
-
-def handle_click(event):
-    lat, lon = event.lat, event.lng
-    print("Latitude:", lat)
-    print("Longitude:", lon)
+# TESTING
+def get_pos(lat,lng):
+    return lat,lng
 
 def app():
     st.title("Connect AI")
@@ -51,6 +49,12 @@ def app():
         ).add_to(map)
 
     st_folium(map, width=1400, height=700)
+
+    # TESTING
+    data = get_pos(map['last_clicked']['lat'],map['last_clicked']['lng'])
+    # TESTING
+    if data is not None:
+        st.write(data)
 
 
 

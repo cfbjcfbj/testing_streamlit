@@ -3,10 +3,8 @@ import folium
 from streamlit_folium import st_folium
 import h3
 import branca.colormap as cm
+import clipboard
 
-# TESTING
-def get_pos(lat,lng):
-    return lat,lng
 
 def app():
     st.title("Connect AI")
@@ -22,6 +20,7 @@ def app():
     # Add click event handler
     map.add_child(folium.LatLngPopup())
     map.add_child(folium.ClickForMarker())
+    latlon = clipboard.paste()
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 
@@ -49,13 +48,7 @@ def app():
         ).add_to(map)
 
     st_folium(map, width=1400, height=700)
-
-    # TESTING
-    data = get_pos(map['last_clicked']['lat'],map['last_clicked']['lng'])
-    # TESTING
-    if data is not None:
-        st.write(data)
-
+    print(latlon)
 
 
 if __name__ == "__main__":

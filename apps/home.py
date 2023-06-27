@@ -26,7 +26,9 @@ def app():
 
     map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
 
-    folium.LatLngPopup().add_to(map)
+    # Add click event handler
+    map.add_child(folium.LatLngPopup())
+    map.add_child(folium.ClickForMarker(popup=None, callback=handle_click))
 
     color_scale = cm.LinearColormap(['green', 'yellow', 'red', 'purple'], vmin=0, vmax=120)
 

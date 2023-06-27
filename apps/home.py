@@ -5,6 +5,7 @@ import h3
 import branca.colormap as cm
 import requests
 
+@st.cache(allow_output_mutation=True)
 def app():
     st.title("Connect AI")
 

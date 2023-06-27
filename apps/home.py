@@ -22,11 +22,11 @@ def text():
     st.write("You are here at~", user_input)
 
 # @st.cache(allow_output_mutation=True)
-def app(user_input):
+def app():
 
     # Call API
 
-    response = requests.get(f"https://connectai-emwgdoqmma-de.a.run.app/traveltimeh3?locations={user_input}")
+    response = requests.get("https://connectai-emwgdoqmma-de.a.run.app/traveltimeh3?locations=642183")
     if response.status_code == 200:
         hex_data = response.json()
     else:

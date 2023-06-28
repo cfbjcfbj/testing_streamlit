@@ -1,6 +1,6 @@
 import streamlit as st
 import folium
-from streamlit_folium import st_folium
+from streamlit_folium import folium_static
 import h3
 import branca.colormap as cm
 import requests
@@ -21,7 +21,7 @@ def app(user_input=None):
         hexagons[hexagon_id] = measurement
 
     # Plot map
-    map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron")
+    map = folium.Map(location=[1.3521, 103.8198], zoom_start=12, tiles="CartoDB Positron",prefer_canvas=True)
 
     # Add click event handler
     map.add_child(folium.LatLngPopup())
@@ -42,7 +42,7 @@ def app(user_input=None):
             popup=f'Time: {time:.2f} min'
         ).add_to(map)
 
-    st_folium(map)
+    folium_static(map,width=10,height=10)
 
 
 def main():
